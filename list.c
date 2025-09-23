@@ -2,30 +2,12 @@
 #include <stdlib.h>
 #include "list.h"
 
-int main()
-{
-    List l;
-    init_list(&l);
-
-    push_back(&l, 10);
-    push_back(&l, 11);
-    push_back(&l, 12);
-
-    push_front(&l, 13);
-    push_front(&l, 14);
-
-    // pop_back(&l);
-    // pop_front(&l);
-    erase(&l, 3);
-    clear(&l);
-    display(&l);
-
-    printf("%d\n", front(&l));
-    printf("%d\n", size(&l));
-    printf("%d\n", empty(&l));
-
-    return 0;
-}
+/************************************************************
+ *  C Doubly Linked List Implementation
+ *  Author: Biswajeet Sahoo
+ *  GitHub: https://github.com/bixuuu4u/C-LIST.git
+ *  Description: STL-like list container implemented in C
+ ************************************************************/
 
 int empty(List *l)
 {
