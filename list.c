@@ -14,15 +14,47 @@ int main()
     push_front(&l, 13);
     push_front(&l, 14);
 
-    insert(&l, 7, 99);
-
     // pop_back(&l);
     // pop_front(&l);
-
+    erase(&l, 3);
     display(&l);
 
     return 0;
 }
+
+void erase(List *l, int position)
+{
+    if (position < 0 || position >= l->size)
+    {
+        return;
+    }
+
+    if (position == 0)
+    {
+        pop_front(l);
+        return;
+    }
+    if (position == l->size - 1)
+    {
+        pop_back(l);
+        return;
+    }
+    Node *temp = l->head;
+    for (int i = 0; i < position; i++)
+    {
+        if (temp == NULL)
+        {
+            return;
+        }
+        temp = temp->next;
+    }
+    temp->next->prev = temp->prev;
+    temp->prev->next = temp->next;
+
+    free(temp);
+    l->size--;
+}
+
 void insert(List *l, int position, int value)
 {
     if (position < 0 || position > l->size)
