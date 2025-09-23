@@ -22,4 +22,5 @@ void push_back(List *l, int value);
 void push_front(List *l, int value);
 void pop_front(List *l);
 void pop_back(List *l);
+void insert(List *l, int position, int value);
 #endif // LIST_H
