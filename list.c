@@ -17,9 +17,25 @@ int main()
     // pop_back(&l);
     // pop_front(&l);
     erase(&l, 3);
+    clear(&l);
     display(&l);
 
     return 0;
+}
+
+void clear(List *l)
+{
+    Node *curr = l->head;
+
+    while (curr != NULL)
+    {
+        Node *temp = curr;
+        curr = curr->next;
+        free(temp);
+    }
+
+    l->head = l->tail = NULL;
+    l->size = 0;
 }
 
 void erase(List *l, int position)

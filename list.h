@@ -24,4 +24,5 @@ void pop_front(List *l);
 void pop_back(List *l);
 void insert(List *l, int position, int value);
 void erase(List *l, int position);
+void clear(List *l);
 #endif // LIST_H
