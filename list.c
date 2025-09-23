@@ -20,7 +20,39 @@ int main()
     clear(&l);
     display(&l);
 
+    printf("%d\n", front(&l));
+    printf("%d\n", size(&l));
+    printf("%d\n", empty(&l));
+
     return 0;
+}
+
+int empty(List *l)
+{
+    return l->size == 0;
+}
+
+int size(List *l)
+{
+    return l->size;
+}
+
+int front(List *l)
+{
+    if (l->head == NULL)
+    {
+        return -1;
+    }
+    return l->head->data;
+}
+
+int back(List *l)
+{
+    if (l->tail == NULL)
+    {
+        return -1;
+    }
+    return l->tail->data;
 }
 
 void clear(List *l)
