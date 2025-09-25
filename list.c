@@ -9,17 +9,17 @@
  *  Description: STL-like list container implemented in C
  ************************************************************/
 
-int empty(List *l)
+int list_empty(List *l)
 {
     return l->size == 0;
 }
 
-int size(List *l)
+int list_size(List *l)
 {
     return l->size;
 }
 
-int front(List *l)
+int list_front(List *l)
 {
     if (l->head == NULL)
     {
@@ -28,7 +28,7 @@ int front(List *l)
     return l->head->data;
 }
 
-int back(List *l)
+int list_back(List *l)
 {
     if (l->tail == NULL)
     {
@@ -37,7 +37,7 @@ int back(List *l)
     return l->tail->data;
 }
 
-void clear(List *l)
+void list_clear(List *l)
 {
     Node *curr = l->head;
 
@@ -52,7 +52,7 @@ void clear(List *l)
     l->size = 0;
 }
 
-void erase(List *l, int position)
+void list_erase(List *l, int position)
 {
     if (position < 0 || position >= l->size)
     {
@@ -61,12 +61,12 @@ void erase(List *l, int position)
 
     if (position == 0)
     {
-        pop_front(l);
+        list_pop_front(l);
         return;
     }
     if (position == l->size - 1)
     {
-        pop_back(l);
+        list_pop_back(l);
         return;
     }
     Node *temp = l->head;
@@ -85,7 +85,7 @@ void erase(List *l, int position)
     l->size--;
 }
 
-void insert(List *l, int position, int value)
+void list_insert(List *l, int position, int value)
 {
     if (position < 0 || position > l->size)
     {
@@ -94,13 +94,13 @@ void insert(List *l, int position, int value)
 
     if (position == 0)
     {
-        push_front(l, value);
+        list_push_front(l, value);
         return;
     }
 
     if (position == l->size)
     {
-        push_back(l, value);
+        list_push_back(l, value);
         return;
     }
 
@@ -128,7 +128,7 @@ void insert(List *l, int position, int value)
     l->size++;
 }
 
-void pop_front(List *l)
+void list_pop_front(List *l)
 {
     if (l->head == NULL)
     {
@@ -149,7 +149,7 @@ void pop_front(List *l)
     l->size--;
 }
 
-void pop_back(List *l)
+void list_pop_back(List *l)
 {
     if (l->head == NULL)
     {
@@ -171,7 +171,7 @@ void pop_back(List *l)
     l->size--;
 }
 
-void push_front(List *l, int value)
+void list_push_front(List *l, int value)
 {
     Node *new_node = create_node(value);
     if (l->head == NULL)
@@ -188,7 +188,7 @@ void push_front(List *l, int value)
     l->size++;
 }
 
-void push_back(List *l, int value)
+void list_push_back(List *l, int value)
 {
     Node *new_node = create_node(value);
     if (l->head == NULL)
@@ -206,7 +206,7 @@ void push_back(List *l, int value)
     l->size++;
 }
 
-void display(List *l)
+void list_display(List *l)
 {
     Node *temp = l->head;
     while (temp != NULL)
@@ -217,7 +217,7 @@ void display(List *l)
     printf("NULL\n");
 }
 
-void init_list(List *l)
+void list_init(List *l)
 {
     l->head = l->tail = NULL;
     l->size = 0;

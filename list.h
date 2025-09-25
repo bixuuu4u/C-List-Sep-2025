@@ -16,17 +16,17 @@ typedef struct List
 } List;
 
 Node *create_node(int value);
-void init_list(List *l);
-void display(List *l);
-void push_back(List *l, int value);
-void push_front(List *l, int value);
-void pop_front(List *l);
-void pop_back(List *l);
-void insert(List *l, int position, int value);
-void erase(List *l, int position);
-void clear(List *l);
-int front(List *l);
-int back(List *l);
-int empty(List *l);
-int size(List *l);
+void list_init(List *l);
+void list_display(List *l);
+void list_push_back(List *l, int value);
+void list_push_front(List *l, int value);
+void list_pop_front(List *l);
+void list_pop_back(List *l);
+void list_insert(List *l, int position, int value);
+void list_erase(List *l, int position);
+void list_clear(List *l);
+int list_front(List *l);
+int list_back(List *l);
+int list_empty(List *l);
+int list_size(List *l);
 #endif // LIST_H
